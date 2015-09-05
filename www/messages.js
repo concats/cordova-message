@@ -12,6 +12,8 @@ function Messages() {}
  */
 Messages.prototype.gotoLaunchPage = function(successCallback, errorCallback) {
 
+  console.log('called gotoLaunchPage');
+
   var options = [];
 
   if (typeof errorCallback !== 'function') {
