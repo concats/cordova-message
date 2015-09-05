@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.concats.cordova-messages" version="0.0.1">
+    <name>Concats Messages</name>
+    <description>Sends messages from Meteor to the Concats App</description>
+    <license>MIT</license>
+    <keywords>concats,cordova,message</keywords>
+    <engines>
+      <engine name="cordova" version=">=3.7.0" />
+    </engines>
+    <js-module src="www/messages.js" name="Messages">
+        <clobbers target="cordova.plugins.concatsMessages" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ConcatsMessages">
+                <param name="ios-package" value="ConcatsCordovaMessages"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ConcatsCordovaMessages.swift" />
+    </platform>
+</plugin>
