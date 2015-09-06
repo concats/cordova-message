@@ -1,16 +1,10 @@
 var exec = require("cordova/exec");
 
-/**
- * Constructor.
- *
- * @returns {Messages}
- */
-function Messages() {}
-
+var messages = {};
 /**
  * Go to launch page page of native app
  */
-Messages.prototype.gotoLaunchPage = function(successCallback, errorCallback) {
+messages.gotoLaunchPage = function(successCallback, errorCallback) {
 
   console.log('called gotoLaunchPage');
 
@@ -24,10 +18,9 @@ Messages.prototype.gotoLaunchPage = function(successCallback, errorCallback) {
     successCallback = function() {};
   }
 
-  cordova.exec(successCallback, errorCallback, 'ConcatsMessages',
+  exec(successCallback, errorCallback, 'ConcatsMessages',
     'gotoLaunchPage',
     options);
 };
 
-var messages = new Messages();
 module.exports = messages;
