@@ -6,8 +6,6 @@ var messages = {};
  */
 messages.gotoLaunchPage = function(successCallback, errorCallback) {
 
-  console.log('called gotoLaunchPage');
-
   var options = [];
 
   if (typeof errorCallback !== 'function') {
