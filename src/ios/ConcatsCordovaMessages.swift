@@ -8,30 +8,13 @@
 
 import UIKit
 
-class ConcatsCordovaMessages:CDVPlugin {
+@objc(ConcatsCordovaMessages) class ConcatsCordovaMessages:CDVPlugin {
 
   func gotoLaunchPage(command: CDVInvokedUrlCommand) {
-    var pluginResult: CDVPluginResult? = nil
-    if (true) {
-      print("gotoLaunchPage called on native side")
-      pluginResult = CDVPluginResult(status: CDVCommandStatus_OK)
-    } else {
-      pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsString: "Arg was null")
-    }
+    let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK)
+    let vc = CordovaInterface.sharedInstance.getViewController()
     self.commandDelegate?.sendPluginResult(pluginResult, callbackId: command.callbackId)
+    vc.navigationController?.popToRootViewControllerAnimated(true)
   }
-
-  /*
-  func genericCommand(command: CDVInvokedUrlCommand) {
-    var pluginResult: CDVPluginResult? = nil
-    let myArg = command.argumentAtIndex(0)
-    if (myArg != nil) {
-      pluginResult = CDVPluginResult(status: CDVCommandStatus_OK)
-    } else {
-      pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsString: "Arg was null")
-    }
-    self.commandDelegate?.sendPluginResult(pluginResult, callbackId: command.callbackId)
-  }
-  */
 
 }
