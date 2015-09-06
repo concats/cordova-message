@@ -24,7 +24,8 @@ Messages.prototype.gotoLaunchPage = function(successCallback, errorCallback) {
     successCallback = function() {};
   }
 
-  exec(successCallback, errorCallback, 'ConcatsMessages', 'gotoLaunchPage',
+  cordova.exec(successCallback, errorCallback, 'ConcatsMessages',
+    'gotoLaunchPage',
     options);
 };
 
