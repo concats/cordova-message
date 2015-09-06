@@ -6,7 +6,7 @@
     <license>MIT</license>
     <keywords>concats,cordova,message</keywords>
     <js-module src="www/messages.js" name="Messages">
-        <clobbers target="cordova.plugins.concatsMessages" />
+        <clobbers target="AppMain.ConcatsMessages" />
     </js-module>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
